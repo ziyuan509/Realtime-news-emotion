@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real-time News Sentiment Visualization</title>
+  <style>
+    /* ... CSS is the same, no changes needed here ... */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 20px;
+    }
+    #news-container {
+      width: 80%;
+      max-width: 600px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin-top: 20px;
+    }
+    h2 {
+      margin: 0 0 10px 0;
+    }
+    p {
+      margin: 0 0 20px 0;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    /* Add style for disabled button */
+    button:disabled {
+      background-color: #cccccc;
+      cursor: not-allowed;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+</head>
+<body>
+  <h1>Real-time News Sentiment Visualization</h1>
+  
+  <div id="canvas-container"></div>
+
+  <div id="news-container">
+    <h2 id="news-title">Loading news...</h2>
+    <p id="news-summary"></p>
+    <p><strong>Sentiment Analysis Result: </strong><span id="sentiment-result">Waiting for model...</span></p>
+    <button id="next-news-btn" disabled>Loading Model...</button>
+  </div>
+
+  <script src="news.js"></script>
+  <script src="sentiment.js"></script>
+  <script src="sketch.js"></script>
+</body>
+</html>
